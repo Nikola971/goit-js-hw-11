@@ -15,11 +15,11 @@ let keyOfSearchPhoto = '';
 refs.loadMoreBtn.classList.add('is-hidden');
 refs.searchForm.addEventListener('submit', onSearch);
 
-function onSearch(search) {
-  search.preventDefault();
+function onSearch(event) {
+  event.preventDefault();
   page = 1;
   refs.gallery.innerHTML = '';
-  const { searchQuery } = search.currentTarget.elements;
+  const { searchQuery } = event.currentTarget.elements;
   keyOfSearchPhoto = searchQuery.value.trim().toLowerCase();
 
   if (keyOfSearchPhoto === '') {
